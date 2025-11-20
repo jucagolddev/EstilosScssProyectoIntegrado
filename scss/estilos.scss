@@ -1,0 +1,10 @@
+// estilos.scss - Archivo manifiesto
+
+// Con @use, el orden importa menos para las variables, 
+// pero sigue importando para la cascada CSS.
+
+@use 'variables'; // Carga las variables (aunque no genera CSS visible)
+@use 'main';      // Carga el CSS del main
+@use 'galeria';   // Carga el CSS del galería
+@use 'footer';    // Carga el CSS del footer
+@use 'header';    // Carga el CSS del header

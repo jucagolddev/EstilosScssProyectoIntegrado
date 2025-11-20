@@ -1,0 +1,127 @@
+// _main.scss - Estilos base globales
+@use 'variables' as *;
+
+// BODY
+body {
+  font-family: $fuente-principal;
+  font-weight: $peso-regular;
+  line-height: 1.6;
+  background-color: $color-fondo-base;
+  margin: 0;
+  padding: 0;
+  color: $color-texto-principal;
+  
+  // Flexbox para mantener el footer abajo
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+// ENCABEZADOS
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fuente-principal;
+  line-height: 1.2;
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: $color-texto-titulo-h1;
+  font-weight: $peso-negrita;
+}
+
+h2 {
+  color: $color-texto-subtitulo;
+  font-weight: $peso-semi-negrita;
+}
+
+h4, h5, h6 {
+  color: $color-texto-secundario;
+  font-weight: $peso-regular;
+}
+
+// ENLACES
+a {
+  color: $color-interactivo-principal;
+  text-decoration: none;
+  
+  &:hover {
+    color: $color-hover-interactivo;
+    text-decoration: underline;
+  }
+  
+  &:active {
+    color: $color-activo-interactivo;
+  }
+  
+  &:disabled {
+    color: $color-deshabilitado-interactivo;
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+// BOTONES
+.boton-primario {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  background-color: $color-interactivo-principal;
+  color: $color-fondo-puro;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: $peso-semi-negrita;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $color-hover-interactivo;
+  }
+  &:active {
+    background-color: $color-activo-interactivo;
+    color: $color-fondo-puro !important;
+  }
+  &:disabled {
+    background-color: $color-deshabilitado-interactivo;
+    cursor: not-allowed;
+  }
+  &:focus {
+    outline: 3px solid $sombra-foco-accesibilidad;
+    outline-offset: 2px;
+  }
+}
+
+// UTILIDADES DE TEXTO
+.texto-secundario {
+  color: $color-texto-secundario;
+  font-size: 0.9rem;
+}
+
+.texto-deshabilitado {
+  color: $color-texto-deshabilitado;
+  font-size: 0.9rem;
+}
+
+//NUEVO: LAYOUT Y ESTRUCTURA
+
+.contenedor {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px; // Padding lateral para móviles
+}
+
+.grid-dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  // Responsive: 1 columna en móviles
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}

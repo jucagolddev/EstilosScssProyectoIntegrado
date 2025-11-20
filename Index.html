@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo de Estilos Académicos</title>
+
+    <!-- Fuentes de Google (Open Sans y Fira Code) -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+    <!-- CSS Compilado (Asegúrate de que sass --watch esté corriendo) -->
+    <link rel="stylesheet" href="scss/estilos.css">
+
+</head>
+
+<body>
+
+    <!-- CABECERA (Usa estilos de _header.scss) -->
+    <header>
+        <div class="contenedor contenedor-header">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span class="icono-logo"></span>
+                Academia PI
+            </a>
+
+            <!-- Navegación -->
+            <nav class="nav-principal">
+                <ul>
+                    <li><a href="#" class="activo">Demo</a></li>
+                    <li><a href="#">Documentación</a></li>
+                    <li><a href="#">Componentes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- Sección 1: Tipografía y Botones -->
+        <section class="contenedor">
+            <div style="margin-top: 2rem;">
+                <h1>Demo de Estilos Académicos</h1>
+                <p class="texto-secundario">Implementación del sistema de diseño modular con SASS.</p>
+            </div>
+
+            <h2>Jerarquía y Acciones</h2>
+            <p>Este es el cuerpo de texto principal. Utilizamos **Open Sans** para una legibilidad superior,
+                combinando la <span class="textoResaltado">profesionalidad con la accesibilidad.</span></p>
+
+            <h3 class="texto-secundario">Elementos Interactivos</h3>
+
+            <div>
+                <button class="boton-primario">Botón (Hover)</button>
+                <button class="boton-primario" disabled>Desactivado</button>
+            </div>
+
+            <a href="#">Enlace de texto estándar</a>
+        </section>
+
+        <!-- Sección 2: Componentes Complejos (Usa estilos de _galeria.scss) -->
+        <section class="seccion-alterna">
+            <div class="contenedor">
+                <h2>Módulos de Contenido</h2>
+                
+                <div class="grid-dos-columnas">
+                    <!-- Tarjeta 1 -->
+                    <div class="tarjeta">
+                        <h3>Módulo de Curso</h3>
+                        <p>Las tarjetas utilizan el fondo secundario con una sombra sutil para distinguirse del fondo base.</p>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="tarjeta">
+                        <h3>Recursos Destacados</h3>
+                        <p>El color azul marino profundo se usa para los títulos H3, aportando autoridad jerárquica.</p>
+                    </div>
+                </div>
+
+                <!-- Cita -->
+                <blockquote>
+                    "La coherencia visual reduce la fricción cognitiva, permitiendo el enfoque en el contenido."
+                    <br>
+                    <span class="texto-secundario">— Principio de Diseño</span>
+                </blockquote>
+
+                <!-- Bloque de Código -->
+                <h3>Ejemplo de Código</h3>
+                <pre>
+// Función de cálculo simple
+function calcularPromedio(a, b) {
+    return (a + b) / 2;
+}
+                </pre>
+                <p>Uso de elementos <code>code</code> en línea para referencias técnicas.</p>
+
+            </div>
+        </section>
+
+
+        <!-- Sección 3: Alertas (Usa estilos de _galeria.scss) -->
+        <section class="contenedor">
+            <h2>Sistema de Alertas</h2>
+
+            <div class="alerta exito">
+                <strong>¡Éxito!</strong> Los estilos se han compilado correctamente.
+            </div>
+
+            <div class="alerta advertencia">
+                <strong>Advertencia:</strong> Revisa la consola para ver warnings de compilación.
+            </div>
+
+            <div class="alerta error">
+                <strong>Error:</strong> No se ha podido conectar con el servidor de estilos.
+            </div>
+
+            <div class="alerta info">
+                <strong>Información:</strong> Esta demo utiliza la nueva arquitectura de archivos parciales.
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA (Usa estilos de _footer.scss) -->
+    <footer>
+        <div class="contenedor">
+            <div class="contenedor-footer">
+                <!-- Columna 1 -->
+                <div>
+                    <h4>Sobre el Proyecto</h4>
+                    <p>Un sistema de diseño académico centrado en la legibilidad y la estructura modular.</p>
+                </div>
+
+                <!-- Columna 2 -->
+                <div>
+                    <h4>Enlaces Útiles</h4>
+                    <ul>
+                        <li><a href="#">Guía de Estilos</a></li>
+                        <li><a href="#">Repositorio</a></li>
+                        <li><a href="#">Reportar Error</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 -->
+                <div>
+                    <h4>Contacto</h4>
+                    <p>soporte@academiapi.com</p>
+                    <p>Campus Virtual, Edificio C</p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2024 Identidad Artística Grupal. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

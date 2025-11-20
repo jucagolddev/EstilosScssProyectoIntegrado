@@ -1,0 +1,83 @@
+// _galeria.scss - Componentes visuales
+@use 'sass:color'; // IMPORTANTE: Cargamos el módulo moderno de color
+@use 'variables' as *;
+
+// Contenedor de Sección Alterna
+.seccion-alterna {
+  background-color: $color-fondo-tarjeta;
+  // CORREGIDO: lighten(..., 70%) -> color.adjust(..., $lightness: 70%)
+  border: 1px solid color.adjust($color-borde-estructura, $lightness: 70%); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 1.5em;
+  border-radius: 6px;
+  margin-bottom: 1.5em;
+  
+  h3 {
+    color: $color-texto-subtitulo; 
+  }
+}
+
+// Citas y Bloques de Citas
+blockquote {
+  border-left: 5px solid $acento-borde-cita;
+  background-color: $acento-fondo-cita;
+  padding: 1em 1.5em;
+  margin: 2em 0;
+  font-style: $fuente-cita;
+  color: $color-texto-secundario;
+}
+
+// Código y Fragmentos de Código
+code {
+  font-family: $fuente-codigo;
+  color: $acento-texto-codigo;
+  background-color: $acento-fondo-codigo;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+pre {
+  background-color: $acento-fondo-codigo;
+  color: $acento-texto-codigo;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+// Alertas y Mensajes de Retroalimentación
+// NOTA: lighten -> adjust +lightness | darken -> adjust -lightness
+.alerta {
+  padding: 1em;
+  margin-bottom: 1em;
+  border-left: 5px solid;
+  font-weight: $peso-regular;
+  border-radius: 4px;
+
+  &.exito {
+    background-color: color.adjust($color-alerta-exito, $lightness: 40%);
+    border-color: $color-alerta-exito;
+    color: color.adjust($color-alerta-exito, $lightness: -20%);
+  }
+  &.advertencia {
+    background-color: color.adjust($color-alerta-advertencia, $lightness: 40%);
+    border-color: $color-alerta-advertencia;
+    color: color.adjust($color-alerta-advertencia, $lightness: -20%);
+  }
+  &.error {
+    background-color: color.adjust($color-alerta-error, $lightness: 40%);
+    border-color: $color-alerta-error;
+    color: color.adjust($color-alerta-error, $lightness: -20%);
+  }
+  &.info {
+    background-color: color.adjust($color-alerta-info, $lightness: 40%);
+    border-color: $color-alerta-info;
+    color: color.adjust($color-alerta-info, $lightness: -20%);
+  }
+
+  .textoResaltado {
+    background-color: $color-acento-resaltado;
+    padding: 0.1em 0.3em;
+    border-radius: 2px;
+  }
+}
