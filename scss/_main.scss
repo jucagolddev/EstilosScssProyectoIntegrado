@@ -1,127 +1,30 @@
-// _main.scss - Estilos base globales
+// Archivo orquestador principal
+// Este archivo no contiene estilos propios, solo importa todos los demás archivos parciales
+// El orden de importación es importante para evitar problemas de especificidad y dependencias
+
+// 1. Configuración y herramientas
+// Primero se importan las variables y mixins que serán usados por los demás archivos
 @use 'variables' as *;
+@use 'mixins' as *;
 
-// BODY
-body {
-  font-family: $fuente-principal;
-  font-weight: $peso-regular;
-  line-height: 1.6;
-  background-color: $color-fondo-base;
-  margin: 0;
-  padding: 0;
-  color: $color-texto-principal;
-  
-  // Flexbox para mantener el footer abajo
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+// 2. Base y normalización
+// Se importan los estilos de reset y normalización que afectan a toda la página
+@use 'reset';
 
-main {
-  flex: 1;
-}
+// 3. Layout (estructura global)
+// Se importan los componentes de estructura principal como header y footer
+@use 'layout/header';
+@use 'layout/footer';
 
-// ENCABEZADOS
-h1, h2, h3, h4, h5, h6 {
-  font-family: $fuente-principal;
-  line-height: 1.2;
-  margin-top: 1.8rem;
-  margin-bottom: 0.5rem;
-}
+// 4. Componentes (elementos reutilizables)
+// Se importan los componentes que se usan en múltiples páginas
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/inputs';
 
-h1 {
-  font-size: 2.5rem;
-  color: $color-texto-titulo-h1;
-  font-weight: $peso-negrita;
-}
-
-h2 {
-  color: $color-texto-subtitulo;
-  font-weight: $peso-semi-negrita;
-}
-
-h4, h5, h6 {
-  color: $color-texto-secundario;
-  font-weight: $peso-regular;
-}
-
-// ENLACES
-a {
-  color: $color-interactivo-principal;
-  text-decoration: none;
-  
-  &:hover {
-    color: $color-hover-interactivo;
-    text-decoration: underline;
-  }
-  
-  &:active {
-    color: $color-activo-interactivo;
-  }
-  
-  &:disabled {
-    color: $color-deshabilitado-interactivo;
-    pointer-events: none;
-    cursor: default;
-  }
-}
-
-// BOTONES
-.boton-primario {
-  display: inline-block;
-  padding: 0.75em 1.5em;
-  background-color: $color-interactivo-principal;
-  color: $color-fondo-puro;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: $peso-semi-negrita;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: $color-hover-interactivo;
-  }
-  &:active {
-    background-color: $color-activo-interactivo;
-    color: $color-fondo-puro !important;
-  }
-  &:disabled {
-    background-color: $color-deshabilitado-interactivo;
-    cursor: not-allowed;
-  }
-  &:focus {
-    outline: 3px solid $sombra-foco-accesibilidad;
-    outline-offset: 2px;
-  }
-}
-
-// UTILIDADES DE TEXTO
-.texto-secundario {
-  color: $color-texto-secundario;
-  font-size: 0.9rem;
-}
-
-.texto-deshabilitado {
-  color: $color-texto-deshabilitado;
-  font-size: 0.9rem;
-}
-
-//NUEVO: LAYOUT Y ESTRUCTURA
-
-.contenedor {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px; // Padding lateral para móviles
-}
-
-.grid-dos-columnas {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-
-  // Responsive: 1 columna en móviles
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-}
+// 5. Páginas (vistas específicas)
+// Se importan los estilos específicos de cada página
+@use 'pages/home';
+@use 'pages/login';
+@use 'pages/register';
+@use 'pages/upload';

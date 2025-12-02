@@ -4,34 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo de Estilos Académicos</title>
+    <title>CampusHub - Demo de Estilos</title>
 
     <!-- Fuentes de Google (Open Sans y Fira Code) -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 
-    <!-- CSS Compilado (Asegúrate de que sass --watch esté corriendo) -->
-    <link rel="stylesheet" href="scss/estilos.css">
+    <!-- CSS Compilado -->
+    <link rel="stylesheet" href="scss/campusHub.css">
 
 </head>
 
 <body>
 
-    <!-- CABECERA (Usa estilos de _header.scss) -->
-    <header>
+    <!-- CABECERA -->
+    <header class="cabecera-principal">
         <div class="contenedor contenedor-header">
             <!-- Logo -->
             <a href="#" class="logo">
-                <span class="icono-logo"></span>
-                Academia PI
+                <img src="assets/img/logo.png.png" alt="Logo CampusHub" class="icono-logo">
+                CampusHub
             </a>
 
             <!-- Navegación -->
             <nav class="nav-principal">
                 <ul>
-                    <li><a href="#" class="activo">Demo</a></li>
-                    <li><a href="#">Documentación</a></li>
-                    <li><a href="#">Componentes</a></li>
+                    <li><a href="#" class="activo">Inicio</a></li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="#">Comunidad</a></li>
+                    <li><a href="#">Recursos</a></li>
                 </ul>
             </nav>
         </div>
@@ -40,123 +41,240 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main>
 
-        <!-- Sección 1: Tipografía y Botones -->
+        <!-- Sección 1: Introducción y Botones -->
         <section class="contenedor">
-            <div style="margin-top: 2rem;">
-                <h1>Demo de Estilos Académicos</h1>
-                <p class="texto-secundario">Implementación del sistema de diseño modular con SASS.</p>
+            <div class="mt-2">
+                <h1>Bienvenido a CampusHub</h1>
+                <p class="texto-secundario">Plataforma integral de gestión académica y recursos educativos.</p>
             </div>
 
-            <h2>Jerarquía y Acciones</h2>
-            <p>Este es el cuerpo de texto principal. Utilizamos **Open Sans** para una legibilidad superior,
-                combinando la <span class="textoResaltado">profesionalidad con la accesibilidad.</span></p>
+            <h2>Componentes: Botones</h2>
+            <p>Variedad de estilos y estados para la interacción del usuario.</p>
 
-            <h3 class="texto-secundario">Elementos Interactivos</h3>
-
-            <div>
-                <button class="boton-primario">Botón (Hover)</button>
-                <button class="boton-primario" disabled>Desactivado</button>
+            <div class="flex-gap">
+                <button class="boton-primario">Primario</button>
+                <button class="boton-primario" disabled>Primario Disabled</button>
+                <button class="boton-delineado">Delineado</button>
+                <button class="boton-delineado" disabled>Delineado Disabled</button>
             </div>
-
-            <a href="#">Enlace de texto estándar</a>
         </section>
 
-        <!-- Sección 2: Componentes Complejos (Usa estilos de _galeria.scss) -->
+        <!-- Sección 2: Tarjetas -->
         <section class="seccion-alterna">
             <div class="contenedor">
-                <h2>Módulos de Contenido</h2>
-                
+                <h2>Componentes: Tarjetas</h2>
+                <p>Contenedores para organizar información destacada.</p>
+
                 <div class="grid-dos-columnas">
                     <!-- Tarjeta 1 -->
-                    <div class="tarjeta">
-                        <h3>Módulo de Curso</h3>
-                        <p>Las tarjetas utilizan el fondo secundario con una sombra sutil para distinguirse del fondo base.</p>
+                    <div class="tarjeta-sonido">
+                        <h3>Curso de Desarrollo Web</h3>
+                        <p>Aprende HTML, CSS y JavaScript desde cero con nuestros expertos.</p>
+                        <button class="boton-primario alinear-inicio">Ver Curso</button>
                     </div>
 
                     <!-- Tarjeta 2 -->
-                    <div class="tarjeta">
-                        <h3>Recursos Destacados</h3>
-                        <p>El color azul marino profundo se usa para los títulos H3, aportando autoridad jerárquica.</p>
+                    <div class="tarjeta-sonido">
+                        <h3>Taller de Diseño UX/UI</h3>
+                        <p>Domina los principios del diseño de interfaces y experiencia de usuario.</p>
+                        <button class="boton-delineado alinear-inicio">Inscribirse</button>
                     </div>
                 </div>
 
                 <!-- Cita -->
-                <blockquote>
-                    "La coherencia visual reduce la fricción cognitiva, permitiendo el enfoque en el contenido."
+                <blockquote class="mt-2">
+                    "La educación es el arma más poderosa que puedes usar para cambiar el mundo."
                     <br>
-                    <span class="texto-secundario">— Principio de Diseño</span>
+                    <span class="texto-secundario">— Nelson Mandela</span>
                 </blockquote>
-
-                <!-- Bloque de Código -->
-                <h3>Ejemplo de Código</h3>
-                <pre>
-// Función de cálculo simple
-function calcularPromedio(a, b) {
-    return (a + b) / 2;
-}
-                </pre>
-                <p>Uso de elementos <code>code</code> en línea para referencias técnicas.</p>
 
             </div>
         </section>
 
-
-        <!-- Sección 3: Alertas (Usa estilos de _galeria.scss) -->
+        <!-- Sección 3: Alertas -->
         <section class="contenedor">
-            <h2>Sistema de Alertas</h2>
+            <h2>Componentes: Alertas</h2>
+            <p>Mensajes de retroalimentación para el usuario.</p>
 
             <div class="alerta exito">
-                <strong>¡Éxito!</strong> Los estilos se han compilado correctamente.
-            </div>
-
-            <div class="alerta advertencia">
-                <strong>Advertencia:</strong> Revisa la consola para ver warnings de compilación.
-            </div>
-
-            <div class="alerta error">
-                <strong>Error:</strong> No se ha podido conectar con el servidor de estilos.
+                <strong>¡Éxito!</strong> Operación completada correctamente.
             </div>
 
             <div class="alerta info">
-                <strong>Información:</strong> Esta demo utiliza la nueva arquitectura de archivos parciales.
+                <strong>Información:</strong> Nueva versión disponible. <span class="textoResaltado">Ver notas</span>
+            </div>
+
+            <div class="alerta advertencia">
+                <strong>Advertencia:</strong> Tu sesión está a punto de expirar.
+            </div>
+
+            <div class="alerta error">
+                <strong>Error:</strong> No se pudo conectar con el servidor.
+            </div>
+        </section>
+
+        <!-- Sección 4: Inputs y Búsqueda -->
+        <section class="seccion-alterna">
+            <div class="contenedor">
+                <h2>Componentes: Inputs</h2>
+                <p>Campos de entrada para formularios y búsqueda.</p>
+
+                <div class="contenedor-inputs">
+                    <div class="grupo-input">
+                        <label class="texto-secundario">Input Texto</label>
+                        <input type="text" placeholder="Escribe algo...">
+                    </div>
+                    <div class="grupo-input">
+                        <label class="texto-secundario">Input Deshabilitado</label>
+                        <input type="text" placeholder="No editable" disabled>
+                    </div>
+                    <div class="grupo-input">
+                        <label class="texto-secundario">Select</label>
+                        <select>
+                            <option>Opción 1</option>
+                            <option>Opción 2</option>
+                            <option>Opción 3</option>
+                        </select>
+                    </div>
+                    <div class="grupo-input">
+                        <label class="texto-secundario">Barra de Búsqueda</label>
+                        <div class="posicion-relativa">
+                            <input type="text" class="barra-busqueda" placeholder="Buscar en CampusHub...">
+                            <span class="icono-busqueda">🔍</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 5: Filtros (Nuevo) -->
+        <section class="contenedor">
+            <h2>Componentes: Filtros</h2>
+            <p>Elementos de navegación por categoría.</p>
+            <div class="filtros-categoria">
+                <button class="boton-primario">Todos</button>
+                <button class="boton-delineado">Desarrollo</button>
+                <button class="boton-delineado">Diseño</button>
+                <button class="boton-delineado">Marketing</button>
+            </div>
+        </section>
+
+        <!-- Sección 6: Tipografía y Código (Nuevo) -->
+        <section class="contenedor">
+            <h2>Tipografía y Código</h2>
+            <p>Estilos para bloques de código y texto técnico.</p>
+
+            <p>Para instalar las dependencias, ejecuta:</p>
+            <pre><code>npm install campushub-ui</code></pre>
+
+            <p>El archivo de configuración se encuentra en <code>src/config.json</code>.</p>
+        </section>
+
+        <!-- Sección 7: Página de Login -->
+        <section class="contenedor pagina-login separador-seccion">
+            <h2>Página: Login</h2>
+            <div class="contenedor-formulario">
+                <h2 class="texto-centrado">Iniciar Sesión</h2>
+                <form>
+                    <div class="mb-1">
+                        <label for="email-login" class="texto-secundario">Correo Electrónico</label>
+                        <input type="email" id="email-login" placeholder="tu@email.com">
+                    </div>
+                    <div class="mb-1">
+                        <label for="password-login" class="texto-secundario">Contraseña</label>
+                        <input type="password" id="password-login" placeholder="********">
+                    </div>
+                    <button type="submit" class="boton-primario ancho-completo">Entrar</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Sección 8: Página de Registro -->
+        <section class="contenedor pagina-registro separador-seccion">
+            <h2>Página: Registro</h2>
+            <div class="contenedor-formulario">
+                <h2 class="texto-centrado">Crear Cuenta</h2>
+                <form>
+                    <div class="fila-nombres">
+                        <div>
+                            <label for="nombre" class="texto-secundario">Nombre</label>
+                            <input type="text" id="nombre" placeholder="Juan">
+                        </div>
+                        <div>
+                            <label for="apellido" class="texto-secundario">Apellido</label>
+                            <input type="text" id="apellido" placeholder="Pérez">
+                        </div>
+                    </div>
+                    <div class="mb-1">
+                        <label for="email-registro" class="texto-secundario">Correo Electrónico</label>
+                        <input type="email" id="email-registro" placeholder="tu@email.com">
+                    </div>
+                    <div class="mb-1">
+                        <label for="password-registro" class="texto-secundario">Contraseña</label>
+                        <input type="password" id="password-registro" placeholder="********">
+                    </div>
+
+                    <div class="terminos">
+                        <input type="checkbox" id="terminos">
+                        <label for="terminos">Acepto los términos y condiciones</label>
+                    </div>
+
+                    <button type="submit" class="boton-primario ancho-completo mt-1">Registrarse</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Sección 9: Página de Subida -->
+        <section class="contenedor pagina-upload separador-seccion">
+            <h2>Página: Subida de Archivos</h2>
+
+            <div class="zona-arrastre">
+                <div class="icono-upload">☁️</div>
+                <p>Arrastra y suelta tus archivos aquí</p>
+                <button class="boton-delineado">O selecciona archivos</button>
+            </div>
+
+            <div class="alerta info">
+                <strong>Nota:</strong> Tamaño máximo de archivo: 50MB. Formatos permitidos: PDF, DOCX, JPG.
             </div>
         </section>
 
     </main>
 
-    <!-- PIE DE PÁGINA (Usa estilos de _footer.scss) -->
-    <footer>
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina-principal">
         <div class="contenedor">
             <div class="contenedor-footer">
                 <!-- Columna 1 -->
                 <div>
-                    <h4>Sobre el Proyecto</h4>
-                    <p>Un sistema de diseño académico centrado en la legibilidad y la estructura modular.</p>
+                    <h4>CampusHub</h4>
+                    <p>Tu compañero en el viaje del aprendizaje.</p>
                 </div>
 
                 <!-- Columna 2 -->
                 <div>
-                    <h4>Enlaces Útiles</h4>
+                    <h4>Enlaces</h4>
                     <ul>
-                        <li><a href="#">Guía de Estilos</a></li>
-                        <li><a href="#">Repositorio</a></li>
-                        <li><a href="#">Reportar Error</a></li>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Cursos</a></li>
+                        <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
 
                 <!-- Columna 3 -->
                 <div>
-                    <h4>Contacto</h4>
-                    <p>soporte@academiapi.com</p>
-                    <p>Campus Virtual, Edificio C</p>
+                    <h4>Soporte</h4>
+                    <p>ayuda@campushub.edu</p>
+                    <p>Centro de Estudiantes</p>
                 </div>
             </div>
 
             <div class="copyright">
-                &copy; 2024 Identidad Artística Grupal. Todos los derechos reservados.
+                &copy; 2024 CampusHub. Todos los derechos reservados.
             </div>
         </div>
     </footer>
 
 </body>
+
 </html>
