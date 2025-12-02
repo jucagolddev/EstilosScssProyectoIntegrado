@@ -1,6 +1,7 @@
 // Estilos para la página de registro
 // Este archivo define los estilos específicos del formulario de creación de cuenta
 @use '../variables' as *;
+@use '../mixins' as *;
 
 // Página de registro
 // Contenedor principal del formulario de registro
@@ -29,7 +30,7 @@
         margin-bottom: 1rem; // Espacio inferior
 
         // Adaptación para dispositivos móviles
-        @media (max-width: 768px) {
+        @include responsive(movil) {
             grid-template-columns: 1fr; // Una sola columna en móviles
         }
     }
